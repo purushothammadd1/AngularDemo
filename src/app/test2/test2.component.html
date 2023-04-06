@@ -1,0 +1,15 @@
+<p>test2 works!</p>
+
+id:{{person.id}}<br>
+name:{{person.name}}<br>
+salary:{{person.salary}}<br/>
+
+<h2><u>Address</u></h2>
+Street:{{person.address.streetno}}<br/>
+City:{{person.address.city}}<br/>
+State:{{person.address.state}}<br/><br>
+
+<h2><u>Hobbies</u></h2>
+<ul>
+    <li *ngFor='let me show person hobbies'{{person.hobbies}}></li>
+</ul>

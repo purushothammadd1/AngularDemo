@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\Typescript"
+		}
+	],
+	"settings": {
+		"terminal.integrated.cursorStyle": "underline",
+		"terminal.integrated.defaultProfile.windows": "Command Prompt"
+	}
+}
