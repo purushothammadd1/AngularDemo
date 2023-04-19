@@ -15,18 +15,16 @@ export class TestComponent implements OnInit {
 
   constructor(){
     this.id=101;
-    this.name='purushotham';
+    this.name="purushotham";
     this.salary=3434.45;
 
-    this.address={streetno:8, city:'JN',state:'Ts'};
-    this.hobbies=['Eating','Sleeping','cricket','Music'];
+    this.address={streetno:8, city:"Jangaon",state:"Telangana"};
+    this.hobbies=["Eating","Sleeping","cricket","Music"];
 
   }
-  ngOnInit(): void {
-    throw new Error('Method not implemented');
+  ngOnInit(){
+
+  }
 
   }
   
-  
-
-}

@@ -5,16 +5,42 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { Test2Component } from './test2/test2.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { ShowemployeesComponent } from './showemployees/showemployees.component';
+import { ExpPipe } from './exp.pipe';
+import { SalPipe } from './sal.pipe';
+import { RegisterComponent } from './register/register.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { GenderPipe } from './gender.pipe';
+import { ProductsComponent } from './products/products.component';
+import { HeaderComponent } from './header/header.component';
+
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    Test2Component
+    Test2Component,
+    LoginComponent,
+    ShowemployeesComponent,
+    ExpPipe,
+    SalPipe,
+    RegisterComponent,
+    NavbarComponent,
+    GenderPipe,
+    ProductsComponent,
+    HeaderComponent,
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,93 @@
+<!-- 
+
+<div class="container">
+    <h1 >Register Employee</h1>
+    <div class="card">
+        <form action="">
+            Enter your EmpName: <input type="text" [(ngModel)]="name"><br><br>
+            Enter your Gender:<input type="text" [(ngModel)]="gender"><br><br>
+            Enter your Salary:<input type="text" [(ngModel)]="salary"><br><br>
+            Enter your Date of Join:<input type="date" [(ngModel)]="doj"><br><br>
+             Enter your Country: <select ngModel name="country">
+                <option value="">select your country</option>
+                <option *ngFor="let c of countryList" value="{{c.alpha3Code}}">
+
+                    {{c.name}}
+                </option>
+            </select><br><br> 
+            Enter your Mobile Number:<input type="number" [(ngModel)]="mobnum"><br><br>
+            Enter your EmailId:<input type="text" [(ngModel)]="emailid"><br><br>
+            Enter your password:<input type="password" [(ngModel)]="password"><br><br>
+            <button type="submit" (click)="printDetails()" >Register Me</button>
+        </form>
+    </div>
+</div> -->
+
+<h1 align="center"> Employee Registration </h1>
+<div class="container">
+
+<form #regFrom="ngForm" (ngSubmit)="employeeRegistration(regFrom.value)">
+
+<table align="center">
+    <tr>
+        <td align="right">EmployeeID</td>
+        <td align="left"><input type="number" name="empId" ngModel /> </td>
+    </tr>
+
+    <tr>
+        <td align="right">Employee Name</td>
+        <td align="left"><input type="text" name="empName" ngModel /> </td>
+    </tr>
+
+    <tr>
+        <td align="right">Salary</td>
+        <td align="left"><input type="text" name="salary" ngModel /> </td>
+    </tr>
+
+    <tr>
+        <td align="right">Gender</td>
+        <td align="left">
+            <select name="gender" ngModel>
+                <option value=""> Select Gender </option>
+                <option value="Male"> Male </option>
+                <option value="Female"> Female </option>
+                <option value="Other"> Other </option>
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td align="right">Country</td>
+        <td align="left">
+            <select name="country" ngModel>
+                <option value=""> Select Country </option>
+                
+                <option value="{{country.cca3}}" *ngFor="let country of countries"> {{country.name.common}} </option>
+
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td align="right">Date of Join</td>
+        <td align="left"><input type="date" name="doj" ngModel /> </td>
+    </tr>
+
+    <tr>
+        <td align="right">Email-ID</td>
+        <td align="left"><input type="text" name="emailId" ngModel /> </td>
+    </tr>
+
+    <tr>
+        <td align="right">Password</td>
+        <td align="left"><input type="password" name="password" ngModel /> </td>
+    </tr>
+
+    <tr>
+        <td align="right"></td>
+        <td align="left"> <button class="btn btn-primary"> Register </button> </td>
+    </tr>
+
+</table>
+</form>
+</div>

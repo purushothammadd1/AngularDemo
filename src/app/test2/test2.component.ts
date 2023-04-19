@@ -5,22 +5,26 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './test2.component.html',
   styleUrls: ['./test2.component.css']
 })
-export class Test2Component implements OnInit{
-  person:any;
+export class Test2Component implements OnInit {
 
-  constructor(){
-    this.person={
-      id:101,
-      Name:'Purushotham',
-      salary:4532.45,
-      address:{streetno: 45,City:'Hyd',state:'Telangana'},
-      hobbies:['eating','sleeping','listening music','cricket']
+  person: any;
 
+  constructor() {
+    this.person = {
+      id: 101,
+      name: 'Harsha',
+      salary: 4545.45,
+      address:{streetNo: 101, city:'Hyd', state:'Telengana'},
+      hobbies:['Eating', 'Sleeping', 'Cricket', 'TV', 'Music']
     };
   }
-  ngOnInit()  {
-    
+
+  ngOnInit() {
   }
-  
+  buttonSubmit(){
+    alert('Button clicked!');
+    console.log(this.person);
+  }
+
 
 }

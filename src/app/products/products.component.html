@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="row">
+      <div class="card" style="width: 200px; height: 400px;">
+          <br>
+          <img class="card-img-top" src="\assets\images\10001.jpg" alt="Card image" style="width: 70%; height: 100%;">
+          <div class="card-body">
+              <h3>Nokia</h3>
+              <p>No cost EMI Applicable.</p>
+              <p>Price:₹14999/-</p>
+              <p align="right">
+                  <a href="#" class="btn btn-primary">Add to cart</a>
+              </p>
+          </div>
+      </div >
+
+      <div class="card" style="width: 200px; height: 400px;">
+          <br>
+          <img class="card" src="\assets\images\10002.jpg" alt="Card image" style="width: 70%; height: 100%;">
+          <div class="card-body">
+              <h3 class="card-title">Samsung</h3>
+              <p class="card-text">No cost EMI Applicable.</p>
+              <p class="card-text">Price:₹34999/-</p>
+              <p align="right">
+                  <a href="#" class="btn btn-primary">Add to cart</a>
+              </p>
+          </div>
+      </div>
+      
+      <div class="card" style="width:200px; height: 400px;">
+          <br/>
+        <img class="card-img-top" src="\assets\images\10006.jpg" alt="Card image" style="width:70%; height:100%;">
+        <div class="card-body">
+          <h3 class="card-title">Iphone</h3>
+          <p class="card-text">No Cost EMI Applicable.</p>
+          <p class="card-text">Price: ₹84999/-</p>
+          <p align="right">
+          <a href="#" class="btn btn-primary">Add to Cart</a>
+          </p>
+      </div>
+      </div>
+
+      <div class="card" style="width:200px; height: 400px;">
+          <br/>
+        <img class="card-img-top" src="\assets\images\10004.jpg" alt="Card image" style="width:70%; height:100%;">
+        <div class="card-body">
+          <h3 class="card-title">RealMe</h3>
+          <p class="card-text">No Cost EMI Applicable.</p>
+          <p class="card-text">Price: ₹18999/-</p>
+          <p align="right">
+          <a href="#" class="btn btn-primary">Add to Cart</a>
+          </p>
+      </div>
+      </div>
+
+      <div class="card" style="width:200px; height: 400px;">
+          <br/>
+        <img class="card-img-top" src="\assets\images\10005.jpg" alt="Card image" style="width:70%; height:100%;">
+        <div class="card-body">
+          <h3 class="card-title">Oneplus</h3>
+          <p class="card-text">No Cost EMI Applicable.</p>
+          <p class="card-text">Price: ₹48999/-</p>
+          <p align="right">
+          <a href="#" class="btn btn-primary">Add to Cart</a>
+          </p>
+      </div>
+      </div>
+
+      <div class="card" style="width:200px; height: 400px;">
+          <br/>
+        <img class="card-img-top" src="\assets\images\10006.jpg" alt="Card image" style="width:70%; height:100%;">
+        <div class="card-body">
+          <h3 class="card-title">Nothing</h3>
+          <p class="card-text">No Cost EMI Applicable.</p>
+          <p class="card-text">Price: ₹64999/-</p>
+          <p align="right">
+          <a href="#" class="btn btn-primary">Add to Cart</a>
+          </p>
+      </div>
+      </div>
+
+        <h1 style="color:red; text-align: center;"> <u>List of Products </u></h1>
+<br/>
+<div class="container">
+    <div class="row md-1 gy-3 my-3">
+      <div class="col-md-3" *ngFor="let product of products">
+        <div class="card" style="width:200px; height: 400px;">
+          <br />
+          <img class="card-img-top" src="{{product.imgsrc}}" alt="Card image" style="width:70%; height:100%;">
+          <div class="card-body">
+            <h3 class="card-title">{{product.name}}</h3>
+            <p class="card-text">{{product.description}}</p>
+            <p class="card-text">Price: ₹{{product.price}}/-</p>
+            <p align="right">
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    </div>
+</div>
