@@ -1,93 +1,111 @@
-<!-- 
+<head>
+	<title>Employee Registration Form</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<!-- Bootstrap Glyphicon icons -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container" style="width:300px">
+        <div >
+		<h1>Employee Registration Form</h1>
+		<form #regFrom="ngForm" (ngSubmit)="employeeRegistration(regFrom.value)">
+			<div class="form-group">
+				<label for="empid" class="sr-only">Employee ID:</label>
+				<div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+					<input type="number" class="form-control" name="empId" ngModel placeholder="Employee ID" >
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="empname" class="sr-only">Employee Name:</label>
+				<div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+					<input type="text" class="form-control" name="empName" ngModel placeholder="Employee Name" >
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salary" class="sr-only">Salary:</label>
+				<div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
+					<input type="number" class="form-control" name="salary" ngModel placeholder="Salary">
+				</div>
+			</div>
 
-<div class="container">
-    <h1 >Register Employee</h1>
-    <div class="card">
-        <form action="">
-            Enter your EmpName: <input type="text" [(ngModel)]="name"><br><br>
-            Enter your Gender:<input type="text" [(ngModel)]="gender"><br><br>
-            Enter your Salary:<input type="text" [(ngModel)]="salary"><br><br>
-            Enter your Date of Join:<input type="date" [(ngModel)]="doj"><br><br>
-             Enter your Country: <select ngModel name="country">
-                <option value="">select your country</option>
-                <option *ngFor="let c of countryList" value="{{c.alpha3Code}}">
+			<div class="form-group">
+				<label for="gender" class="sr-only">Gender:</label>
+				<div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-heart"></span></span>
+					<select class="form-control" name="gender" ngModel>
+						<option value="">Select Gender</option>
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+			</div>
 
-                    {{c.name}}
-                </option>
-            </select><br><br> 
-            Enter your Mobile Number:<input type="number" [(ngModel)]="mobnum"><br><br>
-            Enter your EmailId:<input type="text" [(ngModel)]="emailid"><br><br>
-            Enter your password:<input type="password" [(ngModel)]="password"><br><br>
-            <button type="submit" (click)="printDetails()" >Register Me</button>
+			<div class="form-group">
+				<label for="country" class="sr-only">Country:</label>
+				<div class="input-group">
+				  <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+				  <select class="form-control" name="country" ngModel >
+					<option value=""> Select Country </option>
+                
+                	<option *ngFor="let country of countries"  value="{{country.alpha3Code}}" > {{country.name}} </option>
+
+				  </select>
+				</div>
+			  </div>
+			  
+			<div class="form-group">
+				<label for="doj" class="sr-only">Date of Joining:</label>
+				<div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+					<input type="date" class="form-control" name="doj" placeholder="Date of Joining" ngModel>
+				</div>
+			</div>
+            <!-- <div class="form-group">
+                <label for="experience" class="sr-only">Experience:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-briefcase"></span></span>
+                    <input type="number" class="form-control" id="experience" placeholder="Experience" required>
+                </div>
+            </div> -->
+            <div class="form-group">
+                <label for="emailid" class="sr-only">Email ID:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                    <input type="text" class="form-control" name="emailId" ngModel placeholder="Email ID">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="sr-only">Password:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input type="password" class="form-control" name="password" ngModel placeholder="Password">
+                </div>
+            </div>
+
+			<div class="form-group">
+				<div class="form-group">
+					<label for="department" class="sr-only">Department:</label>
+					<div class="input-group">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-folder-open"></span></span>
+						<select name="department" name="deptId" class="form-control" ngModel>
+							<option value="">Select Department</option>
+							<option value="{{department.deptId}}" *ngFor="let department of departments">{{department.deptName}}</option>
+						</select>
+					</div>
+				</div>
+				
+			</div>
+            <button type="submit" class="btn btn-primary">Register</button>
         </form>
     </div>
-</div> -->
-
-<h1 align="center"> Employee Registration </h1>
-<div class="container">
-
-<form #regFrom="ngForm" (ngSubmit)="employeeRegistration(regFrom.value)">
-
-<table align="center">
-    <tr>
-        <td align="right">EmployeeID</td>
-        <td align="left"><input type="number" name="empId" ngModel /> </td>
-    </tr>
-
-    <tr>
-        <td align="right">Employee Name</td>
-        <td align="left"><input type="text" name="empName" ngModel /> </td>
-    </tr>
-
-    <tr>
-        <td align="right">Salary</td>
-        <td align="left"><input type="text" name="salary" ngModel /> </td>
-    </tr>
-
-    <tr>
-        <td align="right">Gender</td>
-        <td align="left">
-            <select name="gender" ngModel>
-                <option value=""> Select Gender </option>
-                <option value="Male"> Male </option>
-                <option value="Female"> Female </option>
-                <option value="Other"> Other </option>
-            </select>
-        </td>
-    </tr>
-
-    <tr>
-        <td align="right">Country</td>
-        <td align="left">
-            <select name="country" ngModel>
-                <option value=""> Select Country </option>
-                
-                <option value="{{country.cca3}}" *ngFor="let country of countries"> {{country.name.common}} </option>
-
-            </select>
-        </td>
-    </tr>
-
-    <tr>
-        <td align="right">Date of Join</td>
-        <td align="left"><input type="date" name="doj" ngModel /> </td>
-    </tr>
-
-    <tr>
-        <td align="right">Email-ID</td>
-        <td align="left"><input type="text" name="emailId" ngModel /> </td>
-    </tr>
-
-    <tr>
-        <td align="right">Password</td>
-        <td align="left"><input type="password" name="password" ngModel /> </td>
-    </tr>
-
-    <tr>
-        <td align="right"></td>
-        <td align="left"> <button class="btn btn-primary"> Register </button> </td>
-    </tr>
-
-</table>
-</form>
 </div>

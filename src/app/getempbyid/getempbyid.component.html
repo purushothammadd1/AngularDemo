@@ -1,0 +1,37 @@
+<div class="container">
+    <form #empForm="ngForm" (ngSubmit)="getEmpById(empForm.value)">
+        Enter Employee ID : <input type="number" name="empId" ngModel /> <br/>
+        <button> Get Employee </button>
+    </form>
+    </div>
+    <br/><br/>
+    
+    
+    <div class="container" *ngIf="emp">
+        <table class="table table-sm text-center table-hover table-bordered table-striped">
+            <thead class="bg-info">
+                <tr>
+                    <th> EmpId </th>
+                    <th> EmpName </th>
+                    <th> Salary </th>
+                    <th> Gender </th>
+                    <th> Country </th>
+                    <th> DOJ </th>
+                    <th> EmailId </th>
+                    <th> Password </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> {{emp.empId    }} </td>
+                    <td> {{emp.empName  }} </td>
+                    <td> {{emp.salary   }} </td>
+                    <td> {{emp.gender   }} </td>
+                    <td> {{emp.country  }} </td>
+                    <td> {{emp.doj      }} </td>
+                    <td> {{emp.emailId  }} </td>
+                    <td> {{emp.password }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

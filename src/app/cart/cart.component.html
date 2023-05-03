@@ -1,0 +1,34 @@
+<!-- <div class="container">
+    <div class="card">
+        <h5 class="card-title">My Cart</h5>
+    </div>
+    <div class="center">
+       <img src="" alt=""> 
+        <h4>Your Cart is empty</h4>
+        <h6>Add item to it now </h6>
+        <button class="btn btn-primary" route-link="products">Shop Now</button>
+    </div>
+ </div> -->
+<div class="container">
+    <h1 align="center">Cart Items</h1>
+<br/>
+
+<div class="container" *ngIf="products">
+    <table class="table table-sm text-center table-hover table-bordered table-striped">
+        <thead class="bg-info">
+            <tr>
+                <th> ProductId </th>
+                <th> ProductName </th>
+                <th> Price </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td> {{ product.id    }} </td>
+                <td> {{ product.name  }} </td>
+                <td> {{ product.price }} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

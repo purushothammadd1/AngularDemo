@@ -5,20 +5,23 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav me-auto">
+        <ul class="navbar-nav me-auto"> 
           <li class="nav-item">
             <a class="nav-link active" href="#">Home
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="login"> Login </a>
+            <a class="nav-link" [class.disabled]="loginStatus" routerLink="login"> Login </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="register"> Register </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="showemp"> ShowEmployees </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="empbyid"> ShowEmpById </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="products"> Products </a>
@@ -28,7 +31,11 @@
         <form class="d-flex">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="#">Logout</a>
+                  
+                  <a class="nav-link" routerLink="cart"> Cart({{cartItems.length}}) </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [class.disabled]="!loginStatus" routerLink="logout">Logout</a>
                 </li>
             </ul>
         </form>

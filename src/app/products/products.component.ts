@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpService } from '../emp.service';
 
 @Component({
   selector: 'app-products',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit{
   products:any;
-  constructor(){
+  cartProducts:any;
+  constructor(private service:EmpService){
+    this.cartProducts = [];
     this.products=[
       {id:1001,name:"Nokia",price:14999.00,description:"No Cost EMI Applicable",imgsrc:"assets/images/10001.jpg"},
       {id:1002,name:"Samsung",price:24999.00,description:"No Cost EMI Applicable",imgsrc:"assets/images/10002.jpg"},
@@ -16,10 +19,15 @@ export class ProductsComponent implements OnInit{
       {id:1005,name:"Oneplus",price:54999.00,description:"No Cost EMI Applicable",imgsrc:"assets/images/10005.jpg"},
       {id:1006,name:"Nothing",price:64999.00,description:"No Cost EMI Applicable",imgsrc:"assets/images/10006.jpg"},
     ];
+
   }
 
   ngOnInit() {
    
+  }
+  addToCart(products: any) {
+    this.service.addToCart(products);
+  //  localStorage.setItem("cartProducts" , JSON.stringify(this.cartProducts));
   }
 
 }
